@@ -4,14 +4,50 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 import { Card } from '@mui/material'
+// import { makeStyles } from '@mui/styles'
+import { useState } from 'react'
+import GamesShow from './components/games/Show'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// const useStyles:any = makeStyles({
+//   card: {
+//     height: '50%'
+//   }
+//   // root: {
+//   //   '&$selected': {
+//   //     backgroundColor: "rgba(255, 255, 255, 0.12)",
+//   //     color: "#D8D8D8",
+//   //     '&:hover': {
+//   //       backgroundColor: "rgba(255, 255, 255, 0.15)"
+//   //     }
+//   //   },
+//   //   borderColor: "#979797",
+//   //   borderRadius: 2,
+//   //   color: "#D8D8D8",
+//   //   fontWeight: 600,
+//   //   marginTop: 10,
+//   //   marginBottom: 10,
+//   //   textTransform: "uppercase",
+//   //   width: "100%"
+//   // }
+// });
+
 export default function Home() {
+  const [show, setShow] = useState<Boolean>(false)
+  
+  // const styles = useStyles()
+
   return (
-    <Card>
-      <div>Welcome</div>
-    </Card>
+    <div>
+      <Card style={{height: '50%'}}>
+        <div>Welcome</div>
+        <button onClick={() => setShow(!show)}>Show show</button>
+      </Card>
+      <Card>
+        {show && <GamesShow />}
+      </Card>
+    </div>
     // <main className={styles.main}>
     //   <div className={styles.description}>
     //     <p>
