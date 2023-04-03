@@ -6,7 +6,7 @@ import styles from './page.module.css'
 import { Card } from '@mui/material'
 // import { makeStyles } from '@mui/styles'
 import { useState } from 'react'
-import GamesShow from '../../components/games/Show'
+// import GamesShow from '../../pages/games/show'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -45,7 +45,7 @@ export default function Home() {
         <button onClick={() => setShow(!show)}>Show show</button>
       </Card>
       <Card>
-        {show && <GamesShow />}
+        {/* {show && <GamesShow />} */}
       </Card>
     </div>
     // <main className={styles.main}>
