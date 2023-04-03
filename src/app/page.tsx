@@ -6,7 +6,7 @@ import styles from './page.module.css'
 import { Card } from '@mui/material'
 // import { makeStyles } from '@mui/styles'
 import { useState } from 'react'
-import GamesShow from '../components/games/Show'
+import GamesShow from '../../components/games/Show'
 
 const inter = Inter({ subsets: ['latin'] })
 
