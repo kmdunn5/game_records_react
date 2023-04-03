@@ -16,3 +16,11 @@ export default function RootLayout({
     </html>
   )
 }
+
+
+// page
+// error
+// layout
+// loading
+// template
+// head
