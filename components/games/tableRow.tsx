@@ -4,20 +4,20 @@ import Game from '../../models/game'
 import Loading from '@/components/loading'
 import { baseUrl } from '@/baseUrl'
 
-type GameRow = {
+type GameRowProps = {
   id?: number
   gameJson: Game
 }
 
-const GamesRow:React.FC<GameRow> = ({id, gameJson}) => {
+const GamesRow:React.FC<GameRowProps> = ({id, gameJson}) => {
   const [game, setGame] = useState<Game>(gameJson)
 
-  // useEffect(() => {
-  //   axios.get(`${baseUrl}game/${id}`).then((res) => {
-  //     setGame(res.data);
-  //   })
-  //   .catch((error) => console.log(error));
-  // })
+  useEffect(() => {
+    axios.get(`${baseUrl}games/${id}`).then((res) => {
+      setGame(res.data);
+    })
+    .catch((error) => console.log(error));
+  })
 
   const truncatedDesc = (desc: string | undefined) => {
     if (desc === undefined) {

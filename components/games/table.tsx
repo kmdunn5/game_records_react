@@ -3,6 +3,7 @@ import axios from 'axios'
 import Game from '@/models/game'
 import { baseUrl } from '@/baseUrl'
 import GamesRow from './tableRow'
+import { games } from '@/seeds'
 
 const GamesTable:React.FC = () => {
   const [games, setGames] = useState<Game[]>()
