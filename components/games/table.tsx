@@ -3,24 +3,24 @@ import axios from 'axios'
 import Game from '@/models/game'
 import { baseUrl } from '@/baseUrl'
 import GamesRow from './tableRow'
-import { games } from '@/seeds'
+import { games as seedGames } from '@/seeds'
 
 const GamesTable:React.FC = () => {
-  const [games, setGames] = useState<Game[]>()
+  const [games, setGames] = useState<Game[]>(seedGames)
   
-  const loadGames = () => {
-    axios
-      .get(`${baseUrl}games`)
-      .then((res) => {
-        console.log(res.data)
-        setGames(res.data);
-      })
-      .catch((error) => console.log(error));
-  }
+  // const loadGames = () => {
+  //   axios
+  //     .get(`${baseUrl}games`)
+  //     .then((res) => {
+  //       console.log(res.data)
+  //       setGames(res.data);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }
 
-  useEffect(() => {
-    loadGames()
-  }, [])
+  // useEffect(() => {
+  //   loadGames()
+  // }, [])
   
   return(
     <table>
