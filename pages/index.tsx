@@ -2,6 +2,8 @@ import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 import { Button, Card, Divider } from '@mui/material'
 import { useState } from 'react'
+import { User } from '@/models/user'
+import { configureStore } from '@reduxjs/toolkit'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,7 +31,13 @@ const inter = Inter({ subsets: ['latin'] })
 // });
 
 export default function Home() {  
+  let store = configureStore(counterReducer)
+
+  const [user, setUser] = useState<User | undefined>()
   // const styles = useStyles()
+
+  function counterReducer(state = { user: undefined }) {
+  }
 
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignContent:'center'}}>
