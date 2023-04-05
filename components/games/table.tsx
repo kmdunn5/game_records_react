@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Game from '@/models/game'
+import {Game} from '@/models/game'
 import { baseUrl } from '@/baseUrl'
 import GamesRow from './tableRow'
 import { games as seedGames } from '@/seeds'
 
 const GamesTable:React.FC = () => {
   const [games, setGames] = useState<Game[]>(seedGames)
+  // const [games, setGames] = useState<Game[]>([])
   
   // const loadGames = () => {
   //   axios
@@ -20,15 +21,19 @@ const GamesTable:React.FC = () => {
 
   // useEffect(() => {
   //   loadGames()
-  // }, [])
+  // }, [games])
   
   return(
     <table>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Rating</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Rating</th>
+          <th>Player Count</th>
+          <th>Categories</th>
+        </tr>
+      </thead>
       {games ? 
         games.map((game) => {
           return (
