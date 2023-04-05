@@ -31,13 +31,14 @@ const inter = Inter({ subsets: ['latin'] })
 // });
 
 export default function Home() {  
-  let store = configureStore(counterReducer)
+  // let store = configureStore(counterReducer)
 
   const [user, setUser] = useState<User | undefined>()
   // const styles = useStyles()
 
-  function counterReducer(state = { user: undefined }) {
-  }
+  // function counterReducer(state = { user: undefined }) {
+
+  // }
 
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignContent:'center'}}>
