@@ -1,4 +1,4 @@
-// /*
+/*
 ///////////////BASIC////////////////
 
 import { createStore } from 'redux'
