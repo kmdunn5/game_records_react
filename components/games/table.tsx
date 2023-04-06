@@ -6,22 +6,22 @@ import GamesRow from './tableRow'
 import { games as seedGames } from '@/seeds'
 
 const GamesTable:React.FC = () => {
-  const [games, setGames] = useState<Game[]>(seedGames)
-  // const [games, setGames] = useState<Game[]>([])
+  // const [games, setGames] = useState<Game[]>(seedGames)
+  const [games, setGames] = useState<Game[]>([])
   
-  // const loadGames = () => {
-  //   axios
-  //     .get(`${baseUrl}games`)
-  //     .then((res) => {
-  //       console.log(res.data)
-  //       setGames(res.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }
+  const loadGames = () => {
+    axios
+      .get(`${baseUrl}games`)
+      .then((res) => {
+        console.log(res.data)
+        setGames(res.data);
+      })
+      .catch((error) => console.log(error));
+  }
 
-  // useEffect(() => {
-  //   loadGames()
-  // }, [games])
+  useEffect(() => {
+    loadGames()
+  }, [games])
   
   return(
     <table>
