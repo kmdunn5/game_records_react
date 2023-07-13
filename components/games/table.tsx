@@ -37,7 +37,7 @@ const GamesTable:React.FC = () => {
       {games ? 
         games.map((game) => {
           return (
-            <tbody>
+            <tbody key={game.id}>
               <GamesRow key={game.id} id={game.id} gameJson={game}/>
             </tbody>
           )
