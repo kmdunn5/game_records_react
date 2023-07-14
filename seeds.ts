@@ -1,31 +1,36 @@
-import {Game} from "./models/game";
+import { Pet } from "./models/pet";
 
-export const games:Game[] = [
+export const pets: Pet[] = [
   {
     id: 1,
-    name: "Return to Dark Tower",
-    description: "Fantasy pandemic, but with a cool app",
-    min_players: 1,
-    max_players: 4,
-    category: "co-op"
-
+    name: "Zuko",
+    species: "Dog",
+    gender: "Male",
+    date_of_birth: new Date("2019-01-01"),
+    fixed: true
   },
   {
     id: 2,
-    name: "Frosthaven",
-    description: "D&D with cards",
-    rating: "5",
-    min_players: 2,
-    max_players: 4,
-    category: "co-op strategy"
+    name: "Fiona",
+    species: "Cat",
+    gender: "Female",
+    date_of_birth: new Date("2020-03-15"),
+    fixed: true
   },
   {
     id: 3,
-    name: "Warhammer",
-    description: "War game with minis",
-    rating: "40k",
-    min_players: 1,
-    max_players: 2,
-    category: "wargame"
+    name: "Puck",
+    species: "Cat",
+    gender: "Female",
+    date_of_birth: new Date("2022-06-10"),
+    fixed: true
   },
-]
+  {
+    id: 4,
+    name: "Chance",
+    species: "Dog",
+    gender: "Male",
+    date_of_birth: new Date("2021-09-30"),
+    fixed: false
+  },
+];

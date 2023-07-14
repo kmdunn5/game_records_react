@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import update from "immutability-helper";
 
-interface GamesShowProps {
+interface PetsShowProps {
   id?: string
 }
 
-const GamesShow:React.FC<GamesShowProps> = () => {
-  const [game, setGame] = useState<any>('')
+const PetsShow:React.FC<PetsShowProps> = () => {
+  const [pet, setPet] = useState<any>('')
 
-  const loadGame = () => {
+  const loadPet = () => {
     axios
-      .get("http://localhost:3001/api/v1/games")
+      .get("http://localhost:3001/api/v1/pet")
       .then((res) => {
         console.log(res.data)
-        setGame(res.data);
+        setPet(res.data);
       })
       .catch((error) => console.log(error));
   }
 
   useEffect(() => {
-    loadGame()
+    loadPet()
   }, [])
 
   // newTdlist = (e) => {
@@ -75,13 +75,13 @@ const GamesShow:React.FC<GamesShowProps> = () => {
   
   return (
     <div>
-      <p>Got a game, baby!</p>
-      {game ? 
-        <p>{game[0].name}</p>
+      <p>Got a pet, baby!</p>
+      {pet ? 
+        <p>{pet[0].name}</p>
       : <p>Loading</p>
       }
     </div>
   )
 }
 
-export default GamesShow
+export default PetsShow
