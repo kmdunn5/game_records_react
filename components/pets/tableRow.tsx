@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import {Game, playerCount} from '../../models/game'
+import { Pet } from '../../models/pet'
 import Loading from '@/components/loading'
 import { baseUrl } from '@/baseUrl'
 
-type GameRowProps = {
+type PetRowProps = {
   id?: number
-  gameJson: Game
+  petJson: Pet
 }
 
-const GamesRow:React.FC<GameRowProps> = ({id, gameJson}) => {
-  const [game, setGame] = useState<Game>(gameJson)
+const PetsRow:React.FC<PetRowProps> = ({id, petJson}) => {
+  const [pet, setPet] = useState<Pet>(petJson)
 
   // useEffect(() => {
   //   axios.get(`${baseUrl}games/${id}`).then((res) => {
@@ -32,11 +32,9 @@ const GamesRow:React.FC<GameRowProps> = ({id, gameJson}) => {
 
   return (
     <tr>
-      <td>{game.name}</td>
-      <td>{truncatedDesc(game.description)}</td>
-      <td>{game.rating ? game.rating : "Not Rated"}</td>
-      <td>{game.min_players ? playerCount(game) : "No Player count reported"}</td>
-      <td>{game.category ? game.category : ""}</td>
+      <td>{pet.name}</td>
+      <td>{pet.species}</td>
+      <td>{pet.gender}</td>
       {/* {game ?
         <>
           <td>{game.name}</td>
@@ -50,4 +48,4 @@ const GamesRow:React.FC<GameRowProps> = ({id, gameJson}) => {
   )
 }
 
-export default GamesRow
+export default PetsRow
