@@ -6,12 +6,12 @@ interface PetsShowProps {
   id?: string
 }
 
-const PetsShow:React.FC<PetsShowProps> = () => {
+const PetsShow:React.FC<PetsShowProps> = (props) => {
   const [pet, setPet] = useState<any>('')
 
   const loadPet = () => {
     axios
-      .get("http://localhost:3001/api/v1/pet")
+    .get(`http://localhost:3001/api/v1/pet/${props.id}`)
       .then((res) => {
         console.log(res.data)
         setPet(res.data);
